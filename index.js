@@ -25,7 +25,7 @@ let smileValidPattern = /^(\+234|0){1}(702){1}(\d{6}|\d{7})$/;
 revealBtn.addEventListener('click', () => {
     let numberLength = 0;
     phoneNumber = inputNumber.value.trim().replace(/[- ]/g, "");
-    if(/^\+234/.test(phoneNumber)) {
+    if(/^\+/.test(phoneNumber)) {
         numberLength = 14;
     }
     else{
