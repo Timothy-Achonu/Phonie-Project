@@ -19,6 +19,7 @@ let smileValidPattern = /^(\+234|0){1}(702){1}(\d{6}|\d{7})$/;
 
 let isButtonAlive = false;
 let checkPhoneNum;
+let numberLength = 0;
 inputNumber.addEventListener('keyup', (e) => {
     function checkNumberFunc() {
         revealBtn.classList.remove('show');
@@ -44,7 +45,6 @@ inputNumber.addEventListener('keyup', (e) => {
     }
     if(phoneNumber.length >= numberLength) {
         inputNumber.blur()
-        console.log('No!!!');
         inputNumber.value = checkPhoneNum;
         checkNumberFunc();
     }
@@ -54,10 +54,7 @@ inputNumber.addEventListener('keyup', (e) => {
 
 revealBtn.addEventListener('click', () => {
     if(isButtonAlive) {
-        let numberLength = 0;
-        phoneNumber = inputNumber.value.trim().replace(/[- ]/g, "");
-
-        
+        phoneNumber = inputNumber.value.trim().replace(/[- ]/g, "")
         if(mtnValidPattern.test(phoneNumber)) {
             labelInput.innerHTML = '<img src="./MTN.PNG">';
         }
