@@ -61,6 +61,7 @@ body {
 /* Input Area */
 .input-area {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
@@ -89,26 +90,25 @@ body {
     margin-left: 5px;
     color: var(--the-blue);
     font-size: 1.2rem;
+    margin-top: 10px;
+    height: 50px;
+    /* background-color: rebeccapurple; */
 }
-.input-area > label > span{
-    font-size: 0.4rem;
-    color: var(--the-light-blue);
-}
-/* provider */
-.provider {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+.input-area > label.red {
     color: red;
     font-size: 0.7rem;
     padding: 0 10px;
     text-align: center;
 }
-.provider.green {
-    color: green;
+.input-area > label > span{
+    font-size: 0.4rem;
+    color: var(--the-light-blue);
 }
-.provider.black {
-    color: black;
+.input-area > label.green {
+    color: green;
+    font-size: 0.7rem;
+    padding: 0 10px;
+    text-align: center;
 }
 img {
     width:50px;
@@ -120,15 +120,18 @@ img {
     display: flex;
     justify-content: center;
 }
-.button-div > button {
-    background-color: var(--the-blue);
+.button-div > .reveal-btn {
+    background-color: hsla(223, 87%, 59%, 0.3);
     border: none;
     color: white;
-    width: 70%;
+    width: 60%;
     padding: 21px;
     border-radius: 20px;
     margin-bottom: 10px;
     font-family: "Sora", sans-serif;
+}
+.reveal-btn.show {
+    background-color: var(--the-blue);
     cursor: pointer;
 }
 
