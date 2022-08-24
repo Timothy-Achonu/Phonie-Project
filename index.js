@@ -36,18 +36,22 @@ inputNumber.addEventListener('keyup', (e) => {
     checkNumberFunc();
     if(/^\+/.test(phoneNumber)) {
         numberLength = 14;
+        for(let i of inputNumber.value) {
+            if(i == " " || i == "-") {
+                numberLength++;
+            }
+        }
+       
     }
     else{
         numberLength = 11;
+        for(let i of inputNumber.value) {
+            if(i == " " || i == "-") {
+                numberLength++;
+            }
+        }
     }
-    if(phoneNumber.length <= numberLength) {
-        checkPhoneNum = inputNumber.value;
-    }
-    if(phoneNumber.length >= numberLength) {
-        inputNumber.blur()
-        inputNumber.value = checkPhoneNum;
-        checkNumberFunc();
-    }
+    inputNumber.maxLength = numberLength;
     
     
 })
@@ -84,8 +88,10 @@ revealBtn.addEventListener('click', () => {
     }
 })
 
-
-
+// let nums = "1234hkl"
+// for(let i of nums) {
+//   console.log(typeof parseInt(i));
+// }
 
 
 
